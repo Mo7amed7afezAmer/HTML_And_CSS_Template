@@ -1,0 +1,443 @@
+/* Start global rules */
+:root {
+  --section-padding: 50px ;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.overlay {
+  position: relative;
+}
+
+.overlay::after {
+  content: "";
+  background-color: #666;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.fill-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.fill-background::after {
+  content: " ";
+  background: aqua;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
+  transition: 0.3s;
+}
+
+.fill-background:hover::after {
+  height: 100px;
+}
+
+/* End global rules */
+/* Start header */
+.header .nav-tip {
+  background: #999;
+  color: #634f4fee;
+}
+.header .nav-tip .d-flex {
+  justify-content: space-between;
+  align-items: center;
+}
+.header .nav-tip li {
+  padding: 0 10px;
+}
+.header .nav-tip .tip-account {
+  margin: auto -10px;
+}
+.header .nav-tip .tip-account li {
+  padding: 0 10px;
+  border-right: 1px solid;
+  flex-shrink: 0 a;
+  flex-shrink-color: #f6f6f6;
+}
+.header .nav-top {
+  background-color: #eee;
+}
+.header .nav-top .logo {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+.header .nav-top .logo span {
+  color: aqua;
+}
+.header .nav-top .toggle-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 29px;
+  padding: 5px 3px;
+}
+.header .nav-top .toggle-menu span {
+  background-color: #999;
+  width: 100%;
+  height: 3px;
+}
+.header .nav-top .links-menu li {
+  padding: 15px;
+}
+.header .nav-top .links-menu li a {
+  color: #000;
+  text-transform: uppercase;
+}
+.header .nav-top .links-menu li a.open {
+  color: aqua;
+}
+@media (max-width: 577px) {
+  .header .nav-top .links-menu {
+    position: absolute;
+    background: #ddd;
+    top: calc(100% + 1px);
+    left: -200px;
+    z-index: 1000;
+    width: 200px;
+    height: 600px;
+    border-bottom: 2px solid aqua;
+    transition: 0.9s;
+  }
+  .header .nav-top .links-menu.open {
+    left: 0;
+  }
+}
+
+/* End header */
+/* Start landing page */
+.landing-page {
+  width: 100%;
+  height: 200px;
+  background-image: url("../imgs/landing.jpg");
+  background-size: cover;
+}
+.landing-page .text-landing {
+  width: 100%;
+  height: 75%;
+  position: absolute;
+  z-index: 999;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.landing-page .text-landing h1 {
+  text-transform: uppercase;
+}
+.landing-page .text-landing .intro {
+  text-transform: capitalize;
+}
+.landing-page .text-landing .btns-landing .btn-map,
+.landing-page .text-landing .btns-landing .btn-more {
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+.landing-page .text-landing .btns-landing .btn-map.open,
+.landing-page .text-landing .btns-landing .btn-more.open {
+  background-color: aqua;
+  border-color: aqua;
+}
+.landing-page .nav-landing {
+  background: #666;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 998;
+  padding: 15px;
+}
+.landing-page .nav-landing .text span {
+  display: block;
+  text-transform: uppercase;
+}
+.landing-page .nav-landing .text .one {
+  font-size: 12px;
+}
+.landing-page .nav-landing .text .two {
+  color: #fff;
+  font-size: 22px;
+}
+.landing-page .nav-landing ul {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.landing-page .nav-landing .search input.open {
+  background-color: aqua;
+  color: #fff;
+  border-color: aqua;
+}
+
+/* End landing page */
+/* Start section offers */
+.special-offers {
+  padding-top: var(--section-padding, 50px);
+  padding-bottom: var(--section-padding, 50px);
+}
+.special-offers .section-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.special-offers .section-text {
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.special-offers .section-box .row {
+  margin: 0;
+}
+.special-offers .section-box .row > div {
+  padding: 0 5px 10px;
+}
+.special-offers .section-box .inner-box {
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+.special-offers .section-box .inner-box .image-box {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.special-offers .section-box .inner-box .text-box {
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  transition: 0.3s;
+}
+.special-offers .section-box .inner-box .text-box span {
+  display: block;
+  font-size: 12px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.special-offers .section-box .inner-box .text-box .text-icon {
+  width: fit-content;
+}
+.special-offers .section-box .inner-box:hover {
+  border-color: aqua;
+  position: relative;
+  transform: translatey(-5px);
+}
+.special-offers .section-box .inner-box:hover .text-box {
+  background-color: #999;
+}
+.special-offers .section-box .inner-box:hover .one,
+.special-offers .section-box .inner-box:hover .text-icon {
+  color: #fff;
+}
+
+/* End section offers */
+/* Start section holidays */
+.holidays {
+  background-image: url("../imgs/landing-page.jpg");
+  background-size: cover;
+  padding-top: var(--section-padding, 50px);
+  padding-bottom: var(--section-padding, 50px);
+}
+.holidays .section-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  z-index: 99;
+  position: relative;
+}
+.holidays .section-text {
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 30px;
+  z-index: 99;
+  position: relative;
+}
+.holidays .container.d-flex {
+  flex-wrap: wrap;
+}
+.holidays .section-box {
+  width: 150px;
+  margin: 15px;
+  z-index: 99;
+  position: relative;
+}
+.holidays .section-box .image-box {
+  border: 3px solid aqua;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.holidays .section-box .image-box img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.holidays .section-box .text-box {
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+}
+
+/* End section holidays */
+/* Start section happy clients */
+.happy-client {
+  padding-top: var(--section-padding, 50px);
+  padding-bottom: var(--section-padding, 50px);
+}
+.happy-client .section-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.happy-client .section-text {
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.happy-client .section-box {
+  background-color: #eee;
+  padding: 10px 15px;
+  margin-bottom: 24px;
+  border-top: 3px solid aqua;
+  text-transform: capitalize;
+}
+.happy-client .section-box .text-box {
+  margin-bottom: 0;
+}
+.happy-client .section-box .name {
+  color: aqua;
+  display: block;
+  margin: 0;
+}
+.happy-client .section-box .visited-area {
+  font-size: 12px;
+}
+
+/* End section happy clients */
+/* Start footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-transform: capitalize;
+  border-bottom: 2px solid #fff;
+  padding-top: var(--section-padding, 30px);
+}
+.footer .row > div {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #999;
+}
+.footer p {
+  margin-bottom: 0.5rem;
+}
+.footer span.h4 {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: aqua;
+  margin-bottom: 15px;
+  display: block;
+}
+.footer .news-box .news-input {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 90%;
+}
+.footer .news-box .news-input input[type=submit] {
+  background-color: aqua;
+  color: #fff;
+}
+.footer .latest-box .box-repeat {
+  margin-bottom: 1rem;
+}
+.footer .latest-box .box-repeat .box-icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 3px 10px 0 0;
+}
+.footer .latest-box .box-repeat .box-text p {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.footer .latest-box .box-repeat .box-text .date-info {
+  color: aqua;
+  margin-top: -10px;
+  display: block;
+  font-size: 14px;
+}
+.footer .tags {
+  flex-wrap: wrap;
+}
+.footer .tags .boxes {
+  border: 1px solid #fff;
+  padding: 3px 5px;
+  margin: 2px;
+  font-size: 12px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.footer .address .email {
+  font-size: 10px;
+}
+.footer .address .email::before {
+  content: "e-mail ";
+  color: aqua;
+  font-size: 16px;
+}
+.footer .address .email::first-letter {
+  text-transform: capitalize;
+}
+.footer .address .social-box ul {
+  margin: 0 -10px;
+}
+.footer .address .social-box ul a {
+  margin: 0 10px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+.footer .address .social-box ul a:hover {
+  color: aqua;
+  transform: scale(1.5);
+}
+.footer .links-menu {
+  justify-content: center;
+}
+.footer .links-menu .link-item {
+  padding: 15px 7px;
+  display: block;
+  color: #fff;
+}
+.footer .links-menu .open {
+  color: aqua;
+}
+
+/* End footer */
+
+/*# sourceMappingURL=voyage.css.map */
